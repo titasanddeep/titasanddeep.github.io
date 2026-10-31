@@ -1,0 +1,49 @@
+{
+  "name": "titas-and-deep",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Titas & Deep — the bride's side: Bengali wedding invitation built with Remotion",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "studio": "remotion studio src/remotion/index.ts",
+    "render": "remotion render src/remotion/index.ts TitasAndDeepWedding out/titas-and-deep.mp4",
+    "still": "remotion still src/remotion/index.ts TitasAndDeepWedding out/invitation.png --frame=3179",
+    "stills": "node scripts/stills.mjs 0 72 180 300 420 560 800 1000 1060 1100 1140 1240 1340 1560 1640 1800 2160 2250 2600 3179",
+    "profile": "node scripts/profile.mjs",
+    "phone": "node scripts/phone.mjs",
+    "art": "node scripts/generate-art.mjs && node scripts/bake-art.mjs",
+    "og": "node scripts/og-image.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/anek-bangla": "^5.3.0",
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/galada": "^5.3.0",
+    "@remotion/player": "4.0.539",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@remotion/cli": "4.0.539",
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.0.0",
+    "jsdom": "^26.1.0",
+    "playwright-core": "^1.64.1",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

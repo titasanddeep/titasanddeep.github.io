@@ -1,0 +1,26 @@
+
+:root {
+  /* Palette */
+  --sindoor-red: #781f2b;
+  --ivory: #f5ebdd;
+  --antique-gold: #c49a52;
+  --forest-green: #344638;
+  --ink-brown: #30251f;
+  --muted-brown: #665343;
+
+  /* Surround (desktop) */
+  --surround-top: #4a1f24;
+  --surround-mid: #2b1613;
+  --surround-bottom: #1c0e0c;
+
+  /* Typography */
+  --font-bn: "Anek Bangla Variable", "Noto Sans Bengali", sans-serif;
+  --font-bn-display: "Galada", "Anek Bangla Variable", serif;
+  --font-bn-ui: "Anek Bangla Variable", "Noto Sans Bengali", sans-serif;
+  --font-en: "Cormorant Garamond", "Times New Roman", serif;
+
+  /* Controls */
+  --touch: 44px;
+  --ring: 0 0 0 3px var(--ivory), 0 0 0 6px var(--sindoor-red);
+}
+

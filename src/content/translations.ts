@@ -1,0 +1,91 @@
+export type Lang = "bn" | "en";
+
+/**
+ * Every visible string, Bengali first. The invitation line and its signature were written for this film at the
+ * family's request (spec/story.md §6.1): signed by the family, with no names.
+ */
+export const translations = {
+  bn: {
+    title: "তিতাস ও দীপ",
+    subtitle: "তিতাসের বাড়ি থেকে",
+    coverKicker: "শুভ বিবাহ",
+    rotateHint: "আরও বড় করে দেখতে ফোনটি সোজা করে ধরুন",
+    headingHolud: "গায়ে হলুদ",
+    headingWedding: "শুভদৃষ্টি ও মালাবদল",
+    invitation: "সাদর আমন্ত্রণ",
+    invitationMessage: "আমাদের তিতাসের শুভবিবাহে সপরিবারে আপনাদের সাদর আমন্ত্রণ। আপনাদের আশীর্বাদ কামনা করি।",
+    invitationFrom: "— তিতাসের পরিবার",
+    play: "গল্পটি দেখুন",
+    explore: "নিজেই গল্পটি দেখুন",
+    location: "স্থান দেখুন",
+    skip: "আমন্ত্রণে যান",
+    pause: "বিরতি",
+    resume: "চালিয়ে যান",
+    mute: "শব্দ বন্ধ করুন",
+    unmute: "শব্দ চালু করুন",
+    replay: "আবার দেখুন",
+    share: "শেয়ার করুন",
+    copied: "লিঙ্ক কপি হয়েছে",
+    shareText: "তিতাস ও দীপের শুভবিবাহে আপনাদের সাদর আমন্ত্রণ।",
+    languageName: "বাংলা",
+    switchLanguage: "ভাষা বদলান",
+    weddingLabel: "শুভবিবাহ",
+    venueLabel: "স্থান",
+    landmarkLabel: "ল্যান্ডমার্ক",
+    hintBowl: "হলুদের বাটিতে ছুঁয়ে দেখুন",
+    hintLeaves: "পান পাতায় ছুঁয়ে দেখুন",
+    hintOrnament: "সোনালি অলঙ্কারে ছুঁয়ে দেখুন",
+    noteHolud: "বরের গায়ে ছোঁয়ানো হলুদ তত্ত্বের সঙ্গে আসে কনের বাড়িতে — মা সেই হলুদ মেয়ের গায়ে ছুঁইয়ে দেন।",
+    noteWedding: "পিঁড়িতে বসিয়ে কনেকে আনা হয়, পান পাতায় মুখ ঢাকা — তারপর শুভদৃষ্টি।",
+    storyLabel: "তিতাসের বাড়ি থেকে: তিতাস ও দীপের বিবাহের আমন্ত্রণ-চলচ্চিত্র",
+    mapAria: "গুগল ম্যাপে স্থান দেখুন (নতুন ট্যাবে খুলবে)",
+    controlsLabel: "গল্প নিয়ন্ত্রণ",
+    loading: "লোড হচ্ছে…",
+    documentTitle: "তিতাস ও দীপ — তিতাসের বাড়ি থেকে",
+  },
+  en: {
+    title: "Titas & Deep",
+    subtitle: "From Titas's home",
+    coverKicker: "The Wedding of",
+    rotateHint: "Turn your phone upright for a bigger view",
+    headingHolud: "Gaye Holud",
+    headingWedding: "Shubhodrishti & Mala Badal",
+    invitation: "You Are Invited",
+    invitationMessage: "With joy, we invite you and your family to our Titas's wedding, and ask for your blessings.",
+    invitationFrom: "— Titas's family",
+    play: "Watch the Story",
+    explore: "Explore the Story",
+    location: "View Location",
+    skip: "Skip to Invitation",
+    pause: "Pause",
+    resume: "Resume",
+    mute: "Mute sound",
+    unmute: "Unmute sound",
+    replay: "Replay",
+    share: "Share",
+    copied: "Link copied",
+    shareText: "You are warmly invited to the wedding of Titas & Deep.",
+    languageName: "English",
+    switchLanguage: "Change language",
+    weddingLabel: "Wedding",
+    venueLabel: "Venue",
+    landmarkLabel: "Landmark",
+    hintBowl: "Tap the turmeric bowl",
+    hintLeaves: "Tap the betel leaves",
+    hintOrnament: "Tap the golden ornament",
+    noteHolud: "The turmeric that has already touched the groom comes to the bride's home with his family's gifts, and her mother touches it to her.",
+    noteWedding: "Seated on the piri, her face hidden by betel leaves, the bride is carried in. Then the first look.",
+    storyLabel: "From Titas's home: the animated wedding invitation of Titas and Deep",
+    mapAria: "View the location on Google Maps (opens in a new tab)",
+    controlsLabel: "Story controls",
+    loading: "Loading…",
+    documentTitle: "Titas & Deep — From Titas's home",
+  },
+} as const;
+
+export type TranslationKey = keyof (typeof translations)["bn"];
+export type Dictionary = Record<TranslationKey, string>;
+
+export const t = (lang: Lang): Dictionary => translations[lang];
+
+export const otherLang = (lang: Lang): Lang => (lang === "bn" ? "en" : "bn");
